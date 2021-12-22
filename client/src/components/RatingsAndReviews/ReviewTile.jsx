@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
 import Stars from '../Stars';
+import Thumbnail from './Thumbnail';
 
 const ReviewTile = ({ review, getReviews }) => {
   let readableDate = new Date(review.date);
@@ -99,7 +100,14 @@ const ReviewTile = ({ review, getReviews }) => {
           {showMoreSnippet}
           {recommendProduct}
           {salesResponse}
-
+          <div className="review-photos">
+            {review.photos.map((photo) => (
+              <Thumbnail
+                photo={photo}
+                key={photo.id}
+              />
+            ))}
+          </div>
           {helpfulSection}
         </div>
       </div>

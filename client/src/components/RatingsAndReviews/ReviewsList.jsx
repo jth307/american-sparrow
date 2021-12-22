@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
 import ReviewTile from './ReviewTile';
+import SortReviews from './SortReviews';
 
 const ReviewsList = class extends React.Component {
   constructor(props) {
@@ -131,7 +132,14 @@ const ReviewsList = class extends React.Component {
     return (
       <div className="reviews-list">
         <h3>
-
+          {starFilter.length > 0 ? display.length : reviews.length}
+          {' '}
+          reviews,
+          {' '}
+          <SortReviews
+            sortClickHandler={this.sortClickHandler}
+            sortBy={sortBy}
+          />
         </h3>
         <div className="reviews-list-container">
           {display.map((review) => (
