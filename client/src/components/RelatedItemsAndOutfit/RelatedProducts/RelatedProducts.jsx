@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Carousel from '../Carousel';
 import ListCard from '../ListCard';
+import ComparisonModal from '../ComparisonModal.jsx';
 
 const RelatedProducts = ({
   prodsInfo, prodsStyles, prodsMeta,
@@ -21,6 +22,12 @@ const RelatedProducts = ({
   };
   return (
     <div className="related-product-list-container">
+      <ComparisonModal
+        modalClass={modalClass}
+        closeModalHandler={closeModalHandler}
+        currProd={currProdDes}
+        modalRelProd={modalRelProd}
+      />
       <h2 className="related-products-header" id="ratings-reviews-title">RELATED PRODUCTS</h2>
       <Carousel>
         <></>
