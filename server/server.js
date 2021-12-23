@@ -177,7 +177,6 @@ app.get('/qa/answers', (req, res) => {
       res.status(200).end();
     })
     .catch((err) => {
-      console.log('oh noehr', err);
       res.end();
     });
 });
@@ -197,7 +196,6 @@ app.put('/qa/answer/helpful', (req, res) => {
   console.log(req.body.params)
   qna.markAnswerHelpful(req.body.params.answer_id)
     .then(() => {
-      console.log('yay!');
       res.status(204).end();
     })
     .catch((err) => {
