@@ -4,6 +4,9 @@ import PropTypes from 'prop-types';
 
 import ImageGallery from './ImageGallery';
 import ProductInformation from './ProductInformation';
+import StyleSelector from './StyleSelector';
+import AddToCart from './AddToCart';
+import OverviewAndShare from './OverviewAndShare';
 
 class ProductOverview extends React.Component {
   constructor(props) {
@@ -53,12 +56,26 @@ class ProductOverview extends React.Component {
               productRatings={productRatings}
               productStyleSelected={productStyleSelected}
             />
-
+            <StyleSelector
+              productStyles={productStyles}
+              productStyleSelected={productStyleSelected}
+              selectProductStyle={selectProductStyle}
+              // selectProductStyle={this.selectProductStyle}
+            />
+            <AddToCart
+              product={product}
+              productStyleSelected={productStyleSelected}
+              key={productStyleSelected.style_id}
+              stylesInCart={stylesInCart}
+              addStyleToCart={addStyleToCart}
+              removeStyleFromCart={removeStyleFromCart}
+              itemCount={itemCount}
+              changeQty={changeQty}
+            />
+          </div>
+        </div>
+        <OverviewAndShare product={product} />
       </div>
-      </div>
-      </div>
-
-
     );
   }
 }

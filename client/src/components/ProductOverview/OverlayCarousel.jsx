@@ -1,6 +1,7 @@
 // import React, { useState, useEffect } from 'react';
 import React from 'react';
 import PropTypes from 'prop-types';
+import OverlayThumbnail from './OverlayThumbnail';
 
 function OverlayCarousel(props) {
   const {
@@ -65,7 +66,16 @@ function OverlayCarousel(props) {
             </div>
           )}
 
-
+          {currCarouselView.map((photo) => (
+            <OverlayThumbnail
+              key={photo.url}
+              overlayThumbnail={photo}
+              selectMainPic={selectMainPic}
+              mainPicUrl={mainPicUrl}
+              // startIndex={startIndex}
+              expanded={expanded}
+            />
+          ))}
 
           {showDownArrow && (
             <div id="carousel-down-one" className={upDownArrowClass}>
