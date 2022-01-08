@@ -131,7 +131,7 @@ class Banner extends React.Component {
     return (
       <div>
         <div className="titlebar">
-          <img className="logo" src="/assets/logo2.png" alt="logo Icon" />
+          <img className="logo" src="/assets/logo5.png" alt="logo Icon" />
           <input
             type="text"
             className="product-search"
