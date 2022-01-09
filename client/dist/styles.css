@@ -55,26 +55,6 @@ body {
 
 /* Option 1 */
 
-.titlebar {
-  /* background: rgb(17,83,61);
-  background: radial-gradient(circle, rgba(17,83,61,1) 0%, rgba(25,184,141,0.43040966386554624) 0%, rgba(17,83,61,1) 100%);  color: rgb(51, 92, 86); */
-  /* height: 12vh; */
-  height: 8rem;
-  background: rgb(20,98,78);
-  background: radial-gradient(circle, rgba(20,98,78,1) 0%, rgba(19,97,77,1) 21%, rgba(34,48,46,1) 82%);
-  background-image: url('https://t3.ftcdn.net/jpg/04/36/93/58/360_F_436935867_bFgV6XSbklEyrOlwvps8WNo1SerlSnuu.jpg');
-  background-size: cover;
-  background-size: 100% 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-}
-
-.logo {
-  height: 7rem;
-  margin-left: 1.5%;
-  margin-bottom: 0.5%;
-}
 
 /* Option 2 */
 .titlebar {
@@ -97,6 +77,29 @@ body {
   margin-bottom: 0.5%;
 }
 
+.banner-menuItems{
+  margin-left: 6rem;
+  margin-right: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: 1.8rem;
+  align-self: center;
+}
+
+.banner-menuItems div{
+  font-family:  sans-serif;
+  font-weight:lighter;
+  color:  rgb(255, 255, 255);
+  text-decoration: none;
+  padding: 0 1.2rem;
+  letter-spacing: 0.3rem;
+  cursor: pointer;
+}
+
+.banner-menuItems div:hover{
+  color: #642c23;
+}
 
 .product-search {
   /* margin-right: 5%; */
@@ -146,11 +149,11 @@ body {
   padding: 0.9% 0;
   letter-spacing: 0.34rem;
   background: rgb(208,213,211);
-  background: linear-gradient(180deg, rgba(208,213,211,1) 12%, rgba(242,240,240,1) 42%, rgba(228,236,234,1) 68%);
+  background: linear-gradient(180deg, rgb(240, 223, 220) 12%, rgba(242,240,240,1) 42%, rgb(255, 246, 243) 68%);
 }
 
 #timer{
-  color: rgb(73, 150, 127);
+  color: #a03221;
 }
 
 /* Daniel Product Detail & Overview */

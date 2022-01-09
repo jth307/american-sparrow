@@ -132,21 +132,31 @@ class Banner extends React.Component {
       <div>
         <div className="titlebar">
           <img className="logo" src="/assets/logo5.png" alt="logo Icon" />
-          <input
+          {/* <input
             type="text"
             className="product-search"
             onChange={onChange.bind(this)}
             onKeyDown={onKeyDown.bind(this)}
             value={userInput}
-          />
+          /> */}
           {/* <input type="submit" value="hi" className="search-bton" /> */}
-          <img onClick={()=>(this.changeProduct())} className="product-searchh" src="/assets/magny.png" alt="magny Icon" />
-        </div>
+          {/* <img onClick={()=>(this.changeProduct())} className="product-searchh" src="/assets/magny.png" alt="magny Icon" /> */}
+        {/* </div>
         <div className="dropdown">
           {optionList}
+        </div> */}
+        <div className='banner-menuItems'>
+        {/* <div onClick={() => (history.push('/free'))}>Free Stocks</div> */}
+        <div>Women</div>
+        <div>Men</div>
+        <div>Shoes</div>
+        <div>Accessories</div>
+        <div>Cart</div>
+        </div>
         </div>
         <div className="mini-banner">
-          END OF SUMMER SALE! BUY ONE GET ONE 50% OFF! SALE ENDS IN <span id="timer"></span> MINUTES!</div>
+          END OF SUMMER SALE! BUY ONE GET ONE 50% OFF! SALE ENDS IN <span id="timer"></span> MINUTES!
+        </div>
       </div>
     );
   }
