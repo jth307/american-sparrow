@@ -48,7 +48,7 @@ body {
 
 .stars-outer, .stars-inner {
   font-size: 1.5rem;
-  color: #992f22;
+  color: #14776f;
 }
 
 /* Banner and Title */
@@ -83,7 +83,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  font-size: 1.8rem;
+  font-size: 1.7rem;
   align-self: center;
 }
 
@@ -254,25 +254,25 @@ Need to instead change this to an "image-main-zoomed" class with 250%/250%/cover
 #image-main-expanded.right-arrow-toggle-next-enabled
 /* ,#overlay-thumbnail-gallery-expanded.right-arrow-toggle-next-enabled */
 {
-    cursor: url("/assets/icons8-enabled-green-right-arrow-30.png"), auto;
+    cursor: url("/assets/icons8-double-right-26.png"), auto;
 }
 
 #image-main-expanded.right-arrow-toggle-next-disabled
 /* ,#overlay-thumbnail-gallery-expanded.right-arrow-toggle-next-disabled */
 {
-  cursor: url("/assets/icons8-disabled-gray-right-arrow-30.png"), auto;
+  cursor: url("/assets/icons8-disable-right-24.png"), auto;
 }
 
 #image-main-expanded.left-arrow-toggle-prev-enabled
 /* ,#overlay-thumbnail-gallery-expanded.left-arrow-toggle-prev-enabled */
 {
-  cursor: url("/assets/icons8-enabled-green-left-arrow-30.png"), auto;
+  cursor: url("/assets/icons8-double-left-26.png"), auto;
 }
 
 #image-main-expanded.left-arrow-toggle-prev-disabled
 /* ,#overlay-thumbnail-gallery-expanded.left-arrow-toggle-prev-disabled */
 {
-  cursor: url("/assets/icons8-disabled-gray-left-arrow-30.png"), auto;
+  cursor: url("/assets/icons8-disable-left-24.png"), auto;
 }
 
 /* #image-gallery:hover {
@@ -516,6 +516,7 @@ Need to instead change this to an "image-main-zoomed" class with 250%/250%/cover
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin-top:4rem;
   /* align-items: flex-start; */
 }
 
@@ -590,7 +591,7 @@ Need to instead change this to an "image-main-zoomed" class with 250%/250%/cover
   flex-wrap: wrap;
   gap: 0 7%;
   width: 33rem;
-  height: auto;
+  height: 15rem;
   overflow-y: scroll;
 }
 
@@ -729,20 +730,21 @@ Need to instead change this to an "image-main-zoomed" class with 250%/250%/cover
 
   /* Need to set a height for our buttons here in order to keep them spaced proportionally vertically
   (It doesn't work when we only set padding and let the size of the button depend on the inner text size) */
-  height: 6rem;
-  font-size: 1.5rem;
+  height: 5.5rem;
+  font-size: 1.4rem;
 
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.interactive-button-copy:hover {
+.interactive-button-copy.cart:hover {
   text-shadow: 0 0 2em rgba(255,255,255,1);
   /* color: #ffffff;
   border-color: #ffffff;
   background-color:#447c47; */
-  background-color: rgb(218, 236, 226);
+  background-color: rgb(51, 51, 51);
+  color:white;
   /* background-color: #28B351;
   color:white; */
 }
@@ -796,7 +798,7 @@ Need to instead change this to an "image-main-zoomed" class with 250%/250%/cover
   background-size: 20%; */
 }
 
-#add-to-cart-button:active{
+/* #add-to-cart-button:active{
   width: 77.5%;
   display: flex;
   justify-content: space-between;
@@ -813,7 +815,7 @@ Need to instead change this to an "image-main-zoomed" class with 250%/250%/cover
   background-position-x: 95%;
   background-position-y: 50%;
   background-size: 20%; */
-}
+} */
 
 
 
@@ -891,8 +893,8 @@ Need to instead change this to an "image-main-zoomed" class with 250%/250%/cover
 /* BG Related Products Container */
 
 .related-product-list-container, .outfit-list-container {
-  width: 90%;
-  margin: 30px 5% 15px 5%;
+  width: 100%;
+  /* margin: 30px 5% 15px 5%; */
 }
 
 /*BG Headings CSS*/
@@ -921,25 +923,25 @@ Need to instead change this to an "image-main-zoomed" class with 250%/250%/cover
 
 .carousel-content {
   display: flex;
-  gap: 10px 10px;
+  gap: 13px 12px;
   transition: all 250ms linear;
 
 }
 
 
 .left-arrow, .right-arrow {
-  position:absolute;
+  position: absolute;
   z-index: 1;
   top: 50%;
   transform: translateY(-50%);
   width: 4rem;
-  height: 10rem;
-  border-radius: 25px;
-  background-color:whitesmoke;
+  height: 8rem;
+  border-radius: 20px;
+  background-color: whitesmoke;
   border: none;
   transition: background-color 0.4s, width 0.3s, height 0.3s, opacity 0.6s;
   opacity: 0.6;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4);
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 40%);
 
 }
 
@@ -954,9 +956,9 @@ Need to instead change this to an "image-main-zoomed" class with 250%/250%/cover
 }
 
 .arrow-hover:hover {
-  background-color:#15b645;
-  width: 5rem;
-  height: 11rem;
+  background-color:#ffffff;
+  width: 4rem;
+  height: 8rem;
   opacity: 0.9;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   cursor: pointer;
@@ -998,12 +1000,10 @@ Need to instead change this to an "image-main-zoomed" class with 250%/250%/cover
 .product-list-card {
   border: 0.1px solid #8080803d;
   border-radius: 0.5rem;
-  /* width: clamp(24rem, 24rem, 24rem);
-  height: clamp(50rem, 50rem, 50rem); */
-  min-width: 24rem;
-  max-width: 24rem;
-  min-height: 50rem;
-  box-shadow: 0 0.5rem 1rem 0 rgba(0,0,0,0.2);
+  min-width: 32rem;
+  max-width: 32rem;
+  min-height: 40rem;
+  box-shadow: 0 0.5rem 1rem 0 rgb(0 0 0 / 20%);
   transition: 0.3s;
 }
 
@@ -1020,6 +1020,7 @@ Need to instead change this to an "image-main-zoomed" class with 250%/250%/cover
   display: flex;
   justify-content: space-around;
   align-items: center;
+  overflow: hidden;
 }
 
 .card-image-container img {
@@ -1112,11 +1113,12 @@ Need to instead change this to an "image-main-zoomed" class with 250%/250%/cover
 }
 
 .card-image-src {
-  background-size: contain;
+  background-size: cover;
   width: 100%;
   height: 100%;
-  background-repeat: no-repeat;
   background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
 }
 
 .card-image-src:hover {
@@ -1161,24 +1163,23 @@ Need to instead change this to an "image-main-zoomed" class with 250%/250%/cover
 }
 
 .style-name-span {
-  margin: 0rem 1rem 0.5rem 0rem;
+  margin: 0rem 1rem 0rem 0rem;
   font-size: 1.3rem;
   color: rgb(17 83 61);
 }
 
 .prod-price-p {
-  margin: 0rem 1rem 0.5rem 1rem;
+  margin: 0rem 1rem 0rem 1rem;
   font-size: 1.4rem;
 }
 
 .rel-prod-card-stars {
-  margin: 0rem 1rem 0.5rem 1rem;
-  font-size: 1.5rem;
-
+  margin: 0rem 1rem 1rem 1rem;
+  font-size: 1rem;
 }
 
 .sale-price {
-  color: red
+  color: #992f22
 }
 .orig-price-strike {
   color: gray;
@@ -1281,13 +1282,13 @@ Need to instead change this to an "image-main-zoomed" class with 250%/250%/cover
 #ratings-reviews-section {
   display: flex;
   flex-direction: column;
-  margin: 3rem 0;
+  margin: 5rem 0;
 }
 
 #ratings-reviews-title {
   display: block;
   font-weight: 400;
-  font-size: 2rem;
+  font-size: 1.9rem;
   text-transform: uppercase;
   margin: 1rem 3rem;
 }
@@ -1306,7 +1307,7 @@ Need to instead change this to an "image-main-zoomed" class with 250%/250%/cover
 }
 
 .review-stars, .ratings-stars {
-  color: #773024;
+  color: #14776f;
 }
 
 .ratings-container {
@@ -1378,13 +1379,13 @@ tr:hover{
 .actual-progress {
   border-top-left-radius: 2px;
   border-bottom-left-radius: 2px;
-  background-color: #447c47;
+  background-color: #14776f;
   height: 12px;
 }
 
 .actual-progress-full {
   border-radius: 2px;
-  background-color: #447c47;
+  background-color: #14776f;
   height: 12px;
 }
 
@@ -1531,10 +1532,10 @@ h3 {
 }
 
 .review-summary {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family:  Arial, Helvetica, sans-serif, sans-serif;
   font-size: 1.8rem;
   font-weight: bold;
-  margin: 10px 0;
+  margin: 6px 0;
   overflow-wrap: break-word;
 }
 
@@ -1643,7 +1644,7 @@ img.thumbnail:hover {
   text-shadow: 0 0 2em rgba(255,255,255,1);
   color: #ffffff;
   border-color: #ffffff;
-  background-color:#447c47;
+  background-color:#2e2e2e;
 }
 
 #plus-icon {
@@ -1699,10 +1700,9 @@ img.thumbnail:hover {
 .qna-title {
   display: block;
   font-weight: 400;
+  font-size: 1.9rem;
   text-transform: uppercase;
-  margin: 20px 20px;
-  font-size: 1.6rem;
-  color: rgb(94, 94, 94);
+  margin: 2rem 3rem;
 }
 
 .q-search{
@@ -1722,6 +1722,9 @@ img.thumbnail:hover {
   background-repeat: no-repeat;
   background-size: 2.13rem 2.13rem;
   background-position: 98% center;
+}
+input:focus {
+  outline:none;
 }
 
 ::placeholder {

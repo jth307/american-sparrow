@@ -39,9 +39,9 @@ const RelatedProducts = ({
             prodMeta={prodsMeta[index]}
             changeProductHandler={changeProductHandler}
           >
-            <button type="button" onClick={() => openModelHandler(prodInfo.name, prodsMeta[index].characteristics)} className="card-button">
+            {/* <button type="button" onClick={() => openModelHandler(prodInfo.name, prodsMeta[index].characteristics)} className="card-button">
               <i className="far fa-star star-for-button" />
-            </button>
+            </button> */}
           </ListCard>
         ))}
       </Carousel>

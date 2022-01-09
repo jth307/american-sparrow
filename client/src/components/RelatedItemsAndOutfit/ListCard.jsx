@@ -70,9 +70,9 @@ const ListCard = ({
         <p className="product-name-p">
           {prodInfo.name}
           <br />
-          <span className="style-name-span">
+          {/* <span className="style-name-span">
             {`(${styleName})`}
-          </span>
+          </span> */}
         </p>
         <p className="prod-price-p">
           {salePrice

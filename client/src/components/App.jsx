@@ -141,7 +141,7 @@ class App extends React.Component {
                 itemCount={itemCount}
                 changeQty={this.changeQty}
               />
-              {/* <RelatedItemsAndOutfit
+              <RelatedItemsAndOutfit
                 currProdId={currProdId}
                 prodInfo={prodInfo}
                 prodStyles={prodStyles}
@@ -149,7 +149,7 @@ class App extends React.Component {
                 prodStyleSelected={prodStyleSelected}
                 changeProductHandler={this.changeProductHandler}
               />
-              <RatingsAndReviews
+              {/* <RatingsAndReviews
                 prodInfo={prodInfo}
                 prodReviews={prodReviews}
                 prodReviewsMeta={prodReviewsMeta}

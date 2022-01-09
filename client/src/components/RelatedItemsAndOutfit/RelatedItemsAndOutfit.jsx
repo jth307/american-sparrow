@@ -72,11 +72,11 @@ class RelatedItemsAndOutfit extends React.Component {
                 prodsStyles={prodsStyles}
                 prodsMeta={prodsMeta}
               />
-              <UserOutfit
+              {/* <UserOutfit
                 changeProductHandler={changeProductHandler}
                 currProd={currProd}
                 prodStyleSelected={prodStyleSelected}
-              />
+              /> */}
             </div>
           )}
 
