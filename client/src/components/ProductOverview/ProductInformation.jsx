@@ -23,6 +23,8 @@ function ProductInformation(props) {
 
   return (
     <div id="product-information" className="product-right-component">
+      <div id="product-category">{product.category.toUpperCase()}</div>
+      <div id="product-name"><b>{product.name}</b></div>
       <div id="product-rating">
         { showStars
         && <Stars rating={calcAvgRating(productRatings.ratings)} id={`DH-${product.id}`} />}
@@ -32,8 +34,6 @@ function ProductInformation(props) {
             : `Read all ${productReviews.results.length} reviews`}
         </a>
       </div>
-      <div id="product-category">{product.category.toUpperCase()}</div>
-      <div id="product-name"><b>{product.name}</b></div>
       <div id="product-price-main">
         {salePrice
           ? (

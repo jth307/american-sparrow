@@ -21,12 +21,12 @@ function OverviewAndShare(props) {
         <br />
         <span id="product-description">{product.description}</span>
       </div>
-      <div id="product-social">
+      {/* <div id="product-social">
         {socialIcon('facebook')}
         {socialIcon('instagram')}
         {socialIcon('pinterest')}
         {socialIcon('twitter')}
-      </div>
+      </div> */}
     </div>
   );
 }

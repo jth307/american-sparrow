@@ -34,7 +34,7 @@ function OverlayCarousel(props) {
               onClick={showNextPicAndScroll}
               role="presentation"
               alt="Style Thumbnail"
-              src="/assets/icons8-enabled-green-right-arrow-100.png"
+              src="/assets/icons8-double-right-26.png"
             />
           </div>
         )}
@@ -48,7 +48,7 @@ function OverlayCarousel(props) {
               onClick={showPrevPicAndScroll}
               role="presentation"
               alt="Style Thumbnail"
-              src="/assets/icons8-enabled-green-left-arrow-100.png"
+              src="/assets/icons8-double-left-26.png"
             />
           </div>
         )}

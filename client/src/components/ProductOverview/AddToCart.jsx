@@ -136,7 +136,7 @@ function AddToCart(props) {
               ? disabledSizeSelector('OUT OF STOCK')
               : (
                 <select defaultValue="Select Size" id="size-dropdown" className="interactive-button-copy" onChange={handleSizeSelector}>
-                  <option disabled hidden value="Select Size">SELECT SIZE</option>
+                  <option disabled hidden value="Select Size"> SIZE</option>
                   {Object.values(sizesInStock)
                     .map((size) => <option key={size.size}>{size.size}</option>)}
                 </select>
@@ -144,7 +144,7 @@ function AddToCart(props) {
           {Object.values(selectedSize).length === 0
             ? (
               <select disabled defaultValue="—" id="quantity-dropdown" className="interactive-button-copy interactive-button-copy-disabled">
-                <option disabled hidden value="—">—</option>
+                <option disabled hidden value="—">QUANTITY</option>
               </select>
             )
             : (
@@ -161,15 +161,15 @@ function AddToCart(props) {
         : (
           <div id="add-to-cart-buttons" className="add-to-cart-component">
             <button type="button" id="add-to-cart-button" className="interactive-button-copy" onClick={handleAddToBag}>
-              <span>Add To Bag</span>
+              <span>Add To Cart</span>
               <span>&#65291;</span>
             </button>
-            <CartModal
+            {/* <CartModal
               stylesInCart={stylesInCart}
               changeQty={changeQty}
               removeStyleFromCart={removeStyleFromCart}
               itemCount={itemCount}
-            />
+            /> */}
           </div>
         )}
     </div>
