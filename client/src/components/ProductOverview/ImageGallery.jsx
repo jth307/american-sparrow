@@ -118,6 +118,11 @@ function ImageGallery(props) {
     updateThumbnailCarousel();
   }, [productStyleSelected]);
 
+  // Every time the index changes, update main image to the image at that index
+  useEffect(() => {
+    setMainPicUrl(productStyleSelected.photos[currIndex].url);
+  }, [productStyleSelected, currIndex]);
+
 
   const imageGalleryId = expanded ? 'image-gallery-expanded' : 'image-gallery';
 
