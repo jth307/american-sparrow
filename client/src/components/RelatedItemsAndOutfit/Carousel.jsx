@@ -3,29 +3,15 @@ import PropTypes from 'prop-types';
 
 const Carousel = ({ children }) => {
   const [currIndex, setCurrIndex] = useState(0);
-  // const [length, setLength] = useState(children.length);
   const [mappedChildrenLength, setMappedChildrenLength] = useState(children[1].length);
 
-  // useEffect(() => {
-  //   console.log(children);
-  //   // console.log(children.length, 'children length');
-  //   if (children.length !== length) {
-  //     setLength(children.length);
-  //     setCurrIndex(0);
-  //   }
-  //   // if (children[1].length !== mappedChildrenLength) {
-  //   //   setLength(children[1].length + 1);
-  //   //   setCurrIndex(0);
-  //   // }
-  //   // console.log(mappedChildrenLength,'mapped');
-  // }, [children, length, mappedChildrenLength]);
+
 
   useEffect(() => {
     if (mappedChildrenLength !== children[1].length) {
       setMappedChildrenLength(children[1].length);
       setCurrIndex(0);
     }
-    // console.log(mappedChildrenLength,'mapped');
   }, [children, mappedChildrenLength]);
 
   const showPrev = () => {
@@ -58,13 +44,13 @@ const Carousel = ({ children }) => {
         <div className="carousel-content-wrapper">
           <div
             className="carousel-content"
-            style={{ transform: `translateX(-${currIndex * 25}rem)` }}
+            style={{ transform: `translateX(-${currIndex * 35}rem)` }}
           >
             { children }
           </div>
         </div>
         {
-          currIndex < (mappedChildrenLength - 3)
+          currIndex < (mappedChildrenLength - 4)
           && (
             <button onClick={showNext} type="button" className="right-arrow arrow-hover">
               <i className="fas fa-chevron-right arrow-icon" />

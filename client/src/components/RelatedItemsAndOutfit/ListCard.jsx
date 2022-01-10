@@ -4,26 +4,12 @@ import Stars from '../Stars';
 import calcAvgRating from '../helpers/calcAvgRating';
 
 const ListCard = ({
-  prodInfo, prodStyles, prodMeta, changeProductHandler, children,
+  prodInfo, prodStyles, prodMeta, changeProductHandler,
 }) => {
   const origPrice = prodStyles.original_price;
   const salePrice = prodStyles.sale_price;
   const prodUrl = prodStyles.photos[0].url;
   const currStyle = useRef();
-
-  const getImage = (src) => new Promise((resolve, reject) => {
-    const img = new window.Image();
-    img.src = src;
-    if (!src) resolve(null);
-    img.onload = () => {
-      resolve(img);
-    };
-    img.error = (e) => {
-      reject(e);
-    };
-  });
-
-  const rotateStyle = { backgroundImage: `url('${prodUrl}')` };
 
 
   useEffect(() => {
@@ -35,12 +21,11 @@ const ListCard = ({
   return (
     <div className="product-list-card">
       <div className="card-image-container">
-        { children }
         {prodUrl ? (
           <div
             alt="model-in-clothing"
             className="card-image-src"
-            style={rotateStyle}
+            style={{backgroundImage: `url('${prodUrl}')`}}
             onClick={() => changeProductHandler(prodInfo.id)}
             role="presentation"
           />
