@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import server from '../helpers/Axios';
-import RelatedProducts from './RelatedProducts/RelatedProducts';
-import UserOutfit from './UserOutfits/UserOutfit';
+import RelatedProducts from './RelatedProducts';
 
 class RelatedItemsAndOutfit extends React.Component {
   constructor(props) {
@@ -21,14 +20,9 @@ class RelatedItemsAndOutfit extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    const {
-      currProdId,
-    } = this.props;
-    /* console.log('doesnt fire request on "update" --
-    why is the method reaching here on initial page load?'); */
+    const {currProdId} = this.props;
     if ((prevProps.currProdId !== currProdId)) {
       this.setCurrProdToState(currProdId);
-      // console.log('it ran once per click!');
     }
   }
 
@@ -42,12 +36,22 @@ class RelatedItemsAndOutfit extends React.Component {
 
   getRelatedData(currProdId) {
     server.get(`/related/${currProdId}`)
-      .then((res) => this.setState({
+      .then((res) => {
+        //remove duplicates from api
+        for (let i = 0; i < res.data[0].length; i++){
+          if (res.data[0][i+1] && res.data[0][i].id === res.data[0][i+1].id){
+            res.data[0].splice(i,1);
+            res.data[1].splice(i,1)
+            break;
+          }
+        };
+
+        this.setState({
         prodsInfo: res.data[0],
         prodsStyles: res.data[1],
         prodsMeta: res.data[2],
         isFetching: false,
-      }))
+      })})
       .catch((err) => console.log(err));
   }
 
@@ -56,8 +60,8 @@ class RelatedItemsAndOutfit extends React.Component {
       isFetching, prodsInfo, prodsMeta, prodsStyles, currProd,
     } = this.state;
     const { prodStyleSelected } = this.props;
-    // console.log(prodStyleSelected, 'realted outfit and items');
     const { changeProductHandler } = this.props;
+
     return (
       <div>
         {isFetching ? (
@@ -72,14 +76,8 @@ class RelatedItemsAndOutfit extends React.Component {
                 prodsStyles={prodsStyles}
                 prodsMeta={prodsMeta}
               />
-              {/* <UserOutfit
-                changeProductHandler={changeProductHandler}
-                currProd={currProd}
-                prodStyleSelected={prodStyleSelected}
-              /> */}
             </div>
           )}
-
       </div>
     );
   }

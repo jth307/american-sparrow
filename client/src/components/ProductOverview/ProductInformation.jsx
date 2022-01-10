@@ -12,8 +12,7 @@ function ProductInformation(props) {
     productStyleSelected,
   } = props;
 
-  // console.log('product', product);
-  // console.log('productStyleSelected', productStyleSelected);
+
 
   const showStars = Object.keys(productRatings.ratings).length !== 0;
   const productReviewsID = showStars ? 'product-reviews' : 'product-reviews-no-stars';

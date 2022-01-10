@@ -9,14 +9,7 @@ const ListCard = ({
   const origPrice = prodStyles.original_price;
   const salePrice = prodStyles.sale_price;
   const prodUrl = prodStyles.photos[0].url;
-  const styleName = prodStyles.name;
   const currStyle = useRef();
-  const [rotateImage, setRotateImage] = useState(false);
-
-  const rotateStyle = rotateImage ? {
-    transform: 'rotate(90deg) scale(1.5)',
-    backgroundImage: `url('${prodUrl}')`,
-  } : { backgroundImage: `url('${prodUrl}')` };
 
   const getImage = (src) => new Promise((resolve, reject) => {
     const img = new window.Image();
@@ -30,19 +23,12 @@ const ListCard = ({
     };
   });
 
+  const rotateStyle = { backgroundImage: `url('${prodUrl}')` };
+
+
   useEffect(() => {
-    // console.log(currStyle.current, prodInfo.id);
     if (currStyle.current !== prodInfo.id) {
-      // getImage(prodUrl).then((res) => {
-      //   if (!res) return;
-      //   if (res.naturalHeight < res.naturalWidth) {
-      //     setRotateImage(true);
-      //   } else {
-      //     setRotateImage(false);
-      //   }
-      // });
       currStyle.current = prodInfo.id;
-      // console.log(currStyle.current, 'inside');
     }
   }, [prodUrl, prodInfo.id]);
 
@@ -52,7 +38,6 @@ const ListCard = ({
         { children }
         {prodUrl ? (
           <div
-            // src={prodUrl}
             alt="model-in-clothing"
             className="card-image-src"
             style={rotateStyle}
@@ -70,9 +55,6 @@ const ListCard = ({
         <p className="product-name-p">
           {prodInfo.name}
           <br />
-          {/* <span className="style-name-span">
-            {`(${styleName})`}
-          </span> */}
         </p>
         <p className="prod-price-p">
           {salePrice
@@ -97,7 +79,6 @@ ListCard.propTypes = {
   prodInfo: PropTypes.instanceOf(Object).isRequired,
   prodStyles: PropTypes.instanceOf(Object).isRequired,
   prodMeta: PropTypes.instanceOf(Object).isRequired,
-  children: PropTypes.instanceOf(Object).isRequired,
   changeProductHandler: PropTypes.func.isRequired,
 };
 
