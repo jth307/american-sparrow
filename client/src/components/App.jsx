@@ -151,12 +151,12 @@ class App extends React.Component {
                 prodStyleSelected={prodStyleSelected}
                 changeProductHandler={this.changeProductHandler}
               />
-              {/* <RatingsAndReviews
+              <RatingsAndReviews
                 prodInfo={prodInfo}
                 prodReviews={prodReviews}
                 prodReviewsMeta={prodReviewsMeta}
               />
-               <QuestionsAndAnswers /> */}
+               <QuestionsAndAnswers />
             </div>
           )}
       </div>

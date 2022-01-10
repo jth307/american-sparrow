@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import ImageGallery from './ImageGallery';
 import ProductInformation from './ProductInformation';
 import StyleSelector from './StyleSelector';
-// import AddToCart from './AddToCart';
+import AddToCart from './AddToCart';
 
 class ProductOverview extends React.Component {
   constructor(props) {
@@ -61,16 +61,16 @@ class ProductOverview extends React.Component {
               selectProductStyle={selectProductStyle}
               // selectProductStyle={this.selectProductStyle}
             />
-            {/* <AddToCart
+            <AddToCart
               product={product}
               productStyleSelected={productStyleSelected}
               key={productStyleSelected.style_id}
-              stylesInCart={stylesInCart}
-              addStyleToCart={addStyleToCart}
-              removeStyleFromCart={removeStyleFromCart}
-              itemCount={itemCount}
-              changeQty={changeQty}
-            /> */}
+              // stylesInCart={stylesInCart}
+              // addStyleToCart={addStyleToCart}
+              // removeStyleFromCart={removeStyleFromCart}
+              // itemCount={itemCount}
+              // changeQty={changeQty}
+            />
           </div>
         </div>
         <div id="overview-and-share">
