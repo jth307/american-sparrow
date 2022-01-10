@@ -5,8 +5,7 @@ import PropTypes from 'prop-types';
 import ImageGallery from './ImageGallery';
 import ProductInformation from './ProductInformation';
 import StyleSelector from './StyleSelector';
-import AddToCart from './AddToCart';
-import OverviewAndShare from './OverviewAndShare';
+// import AddToCart from './AddToCart';
 
 class ProductOverview extends React.Component {
   constructor(props) {
@@ -32,11 +31,11 @@ class ProductOverview extends React.Component {
       productReviews,
       productRatings,
       selectProductStyle,
-      stylesInCart,
-      addStyleToCart,
-      removeStyleFromCart,
-      itemCount,
-      changeQty,
+      // stylesInCart,
+      // addStyleToCart,
+      // removeStyleFromCart,
+      // itemCount,
+      // changeQty,
     } = this.props;
 
     const { expanded } = this.state;
@@ -62,7 +61,7 @@ class ProductOverview extends React.Component {
               selectProductStyle={selectProductStyle}
               // selectProductStyle={this.selectProductStyle}
             />
-            <AddToCart
+            {/* <AddToCart
               product={product}
               productStyleSelected={productStyleSelected}
               key={productStyleSelected.style_id}
@@ -71,10 +70,16 @@ class ProductOverview extends React.Component {
               removeStyleFromCart={removeStyleFromCart}
               itemCount={itemCount}
               changeQty={changeQty}
-            />
+            /> */}
           </div>
         </div>
-        <OverviewAndShare product={product} />
+        <div id="overview-and-share">
+          <div id="slogan-description-container">
+            <span id="product-slogan"><b>{product.slogan}</b></span>
+            <br />
+            <span id="product-description">{product.description}</span>
+          </div>
+       </div>
       </div>
     );
   }

@@ -641,7 +641,7 @@ Need to instead change this to an "image-main-zoomed" class with 250%/250%/cover
 }
 
 .product-style-thumbnail-checked {
-  border: 2px solid #5f1c13;
+  border: 3px solid #373a3c;
 }
 
 .checky-check {
@@ -867,40 +867,19 @@ Need to instead change this to an "image-main-zoomed" class with 250%/250%/cover
 
 /* Social (Right side of Bottom Overview Container) */
 
-#product-social {
-  width: 35%;
-  padding: 2% 1%;
-  border-left: 1px none gray;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-}
 
-.social-icon {
-  /* height: 25%; */
- color: rgb(75, 75, 75);
- font-size: 4rem;
 
-}
+/*  Related Products & Outfit Creation */
 
-.social-icon:hover {
-  cursor: pointer;
-}
-
-/* Bishal Related Products & Outfit Creation */
-
-/* BG Related Products Container */
 
 .related-product-list-container, .outfit-list-container {
   width: 100%;
   /* margin: 30px 5% 15px 5%; */
 }
 
-/*BG Headings CSS*/
 
 
-
-/* BG Carousel CSS */
+/*  Carousel CSS */
 .carousel-container {
   width: 100%;
   display: flex;
@@ -1157,7 +1136,7 @@ Need to instead change this to an "image-main-zoomed" class with 250%/250%/cover
 
 
 .product-name-p {
-  margin: 0rem 1rem 0.5rem 1rem;
+  margin: 0rem 1rem;
   font-size: 1.8rem;
 }
 

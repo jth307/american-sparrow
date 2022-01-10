@@ -18,15 +18,15 @@ class App extends React.Component {
       prodStyleSelected: {},
       prodReviewsMeta: {},
       prodReviews: {},
-      stylesInCart: [],
-      itemCount: 0,
+      // stylesInCart: [],
+      // itemCount: 0,
       isFetching: true,
     };
     this.changeProductHandler = this.changeProductHandler.bind(this);
     this.selectProductStyle = this.selectProductStyle.bind(this);
-    this.addStyleToCart = this.addStyleToCart.bind(this);
-    this.removeStyleFromCart = this.removeStyleFromCart.bind(this);
-    this.changeQty = this.changeQty.bind(this);
+    // this.addStyleToCart = this.addStyleToCart.bind(this);
+    // this.removeStyleFromCart = this.removeStyleFromCart.bind(this);
+    // this.changeQty = this.changeQty.bind(this);
   }
 
   componentDidMount() {
@@ -35,7 +35,6 @@ class App extends React.Component {
   }
 
   getCurrProdData(currProdId) {
-    // console.log('here');
     server.get(`/currentProduct/${currProdId}`)
       .then(({ data }) => this.setState({
         currProdId: data[0].id,
@@ -63,52 +62,52 @@ class App extends React.Component {
     }
   }
 
-  addStyleToCart(item) {
-    stylesInCurrentCart.push(item);
-    this.setState({
-      stylesInCart: stylesInCurrentCart,
-      itemCount: this.state.itemCount += item.quantity,
-    });
-  }
+  // addStyleToCart(item) {
+  //   stylesInCurrentCart.push(item);
+  //   this.setState({
+  //     stylesInCart: stylesInCurrentCart,
+  //     itemCount: this.state.itemCount += item.quantity,
+  //   });
+  // }
 
-  removeStyleFromCart(item) {
-    for (let i = 0; i < stylesInCurrentCart.length; i += 1) {
-      if (stylesInCurrentCart[i].sku_id === item.sku_id) {
-        stylesInCurrentCart.splice(i, 1);
-        break;
-      }
-    }
-    this.setState({
-      stylesInCart: stylesInCurrentCart,
-      itemCount: this.state.itemCount -= item.quantity,
-    });
-  }
+  // removeStyleFromCart(item) {
+  //   for (let i = 0; i < stylesInCurrentCart.length; i += 1) {
+  //     if (stylesInCurrentCart[i].sku_id === item.sku_id) {
+  //       stylesInCurrentCart.splice(i, 1);
+  //       break;
+  //     }
+  //   }
+  //   this.setState({
+  //     stylesInCart: stylesInCurrentCart,
+  //     itemCount: this.state.itemCount -= item.quantity,
+  //   });
+  // }
 
-  changeQty(item, qty) {
-    if (qty < 0) {
-      for (let i = 0; i < stylesInCurrentCart.length; i += 1) {
-        if (stylesInCurrentCart[i].sku_id === item.sku_id && stylesInCurrentCart[i].quantity > 0) {
-          stylesInCurrentCart[i].quantity += qty;
-          this.setState({
-            stylesInCart: stylesInCurrentCart,
-            itemCount: this.state.itemCount += qty,
-          });
-          break;
-        }
-      }
-    } else {
-      for (let i = 0; i < stylesInCurrentCart.length; i += 1) {
-        if (stylesInCurrentCart[i].sku_id === item.sku_id) {
-          stylesInCurrentCart[i].quantity += qty;
-          this.setState({
-            stylesInCart: stylesInCurrentCart,
-            itemCount: this.state.itemCount += qty,
-          });
-          break;
-        }
-      }
-    }
-  }
+  // changeQty(item, qty) {
+  //   if (qty < 0) {
+  //     for (let i = 0; i < stylesInCurrentCart.length; i += 1) {
+  //       if (stylesInCurrentCart[i].sku_id === item.sku_id && stylesInCurrentCart[i].quantity > 0) {
+  //         stylesInCurrentCart[i].quantity += qty;
+  //         this.setState({
+  //           stylesInCart: stylesInCurrentCart,
+  //           itemCount: this.state.itemCount += qty,
+  //         });
+  //         break;
+  //       }
+  //     }
+  //   } else {
+  //     for (let i = 0; i < stylesInCurrentCart.length; i += 1) {
+  //       if (stylesInCurrentCart[i].sku_id === item.sku_id) {
+  //         stylesInCurrentCart[i].quantity += qty;
+  //         this.setState({
+  //           stylesInCart: stylesInCurrentCart,
+  //           itemCount: this.state.itemCount += qty,
+  //         });
+  //         break;
+  //       }
+  //     }
+  //   }
+  // }
 
   render() {
     const {
@@ -117,7 +116,8 @@ class App extends React.Component {
       prodStyles,
       prodReviewsMeta,
       prodReviews,
-      isFetching, prodStyleSelected, stylesInCart, itemCount, changeQty,
+      isFetching, prodStyleSelected,
+      // stylesInCart, itemCount, changeQty,
     } = this.state;
 
     return (
@@ -127,7 +127,9 @@ class App extends React.Component {
         )
           : (
             <div className="app-container">
-              <Banner currProdId={currProdId} changeProductHandler={this.changeProductHandler} />
+              <Banner
+              // currProdId={currProdId} changeProductHandler={this.changeProductHandler}
+              />
               <ProductOverview
                 product={prodInfo}
                 productStyles={prodStyles}
@@ -135,11 +137,11 @@ class App extends React.Component {
                 productReviews={prodReviews}
                 productRatings={prodReviewsMeta}
                 selectProductStyle={this.selectProductStyle}
-                stylesInCart={stylesInCart}
-                addStyleToCart={this.addStyleToCart}
-                removeStyleFromCart={this.removeStyleFromCart}
-                itemCount={itemCount}
-                changeQty={this.changeQty}
+                // stylesInCart={stylesInCart}
+                // addStyleToCart={this.addStyleToCart}
+                // removeStyleFromCart={this.removeStyleFromCart}
+                // itemCount={itemCount}
+                // changeQty={this.changeQty}
               />
               <RelatedItemsAndOutfit
                 currProdId={currProdId}
