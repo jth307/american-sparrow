@@ -33,14 +33,14 @@ const ListCard = ({
   useEffect(() => {
     // console.log(currStyle.current, prodInfo.id);
     if (currStyle.current !== prodInfo.id) {
-      getImage(prodUrl).then((res) => {
-        if (!res) return;
-        if (res.naturalHeight < res.naturalWidth) {
-          setRotateImage(true);
-        } else {
-          setRotateImage(false);
-        }
-      });
+      // getImage(prodUrl).then((res) => {
+      //   if (!res) return;
+      //   if (res.naturalHeight < res.naturalWidth) {
+      //     setRotateImage(true);
+      //   } else {
+      //     setRotateImage(false);
+      //   }
+      // });
       currStyle.current = prodInfo.id;
       // console.log(currStyle.current, 'inside');
     }
