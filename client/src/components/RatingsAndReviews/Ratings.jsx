@@ -34,6 +34,12 @@ const Ratings = class extends React.Component {
       this.calcRatingAndRec();
       this.extractCharacteristics();
     }
+
+    const {productId} = this.props;
+    if (prevProps.productId !== productId) {
+      this.getReviewMeta();
+    }
+
   }
 
   getReviewMeta() {
