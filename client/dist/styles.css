@@ -1070,12 +1070,6 @@ body {
   color:gray;
 }
 
-.add-to-outfit-heading {
-  font-size: 2.5rem;
-  color: #447c47;
-  text-align: center;
-}
-
 
 .product-name-p {
   margin: 0rem 1rem;
@@ -1196,9 +1190,7 @@ body {
 
 
 
-/* Alex Questions & Answers */
 
-/* Ya Ratings & Reviews */
 #ratings-reviews-section {
   display: flex;
   flex-direction: column;
@@ -1280,7 +1272,7 @@ td {
 }
 
 tr:hover{
-  background-color: #E9FAC8;
+  background-color: #d3d3d3;
 }
 
 .align-right {

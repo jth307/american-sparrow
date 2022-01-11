@@ -7,12 +7,21 @@ const RatingsAndReviews = class extends React.Component {
     super(props);
 
     this.state = {
-      productId: 40344,
+      productId: this.props.currProdId,
       starFilter: [],
     };
 
     this.handleStarClick = this.handleStarClick.bind(this);
     this.removeFilter = this.removeFilter.bind(this);
+  }
+
+   componentDidUpdate(prevProps) {
+    const {currProdId} = this.props;
+    console.log(prevProps.currProdId, currProdId)
+    if ((prevProps.currProdId !== currProdId)) {
+      console.log('hey')
+      this.setState({productId: currProdId});
+    }
   }
 
   handleStarClick(starCount) {

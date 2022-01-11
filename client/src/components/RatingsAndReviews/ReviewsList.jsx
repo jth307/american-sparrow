@@ -32,6 +32,11 @@ const ReviewsList = class extends React.Component {
     if (sortBy !== prevState.sortBy || starFilter.length !== prevProps.starFilter.length) {
       this.updateDisplay();
     }
+
+    const {productId} = this.props;
+    if (prevProps.productId !== productId) {
+      this.getReviews();
+    }
   }
 
   handleMoreReviews() {

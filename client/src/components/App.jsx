@@ -152,11 +152,12 @@ class App extends React.Component {
                 changeProductHandler={this.changeProductHandler}
               />
               <RatingsAndReviews
+                currProdId={currProdId}
                 prodInfo={prodInfo}
                 prodReviews={prodReviews}
                 prodReviewsMeta={prodReviewsMeta}
               />
-               <QuestionsAndAnswers />
+               {/* <QuestionsAndAnswers /> */}
             </div>
           )}
       </div>

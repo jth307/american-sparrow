@@ -38,7 +38,6 @@ class RelatedItemsAndOutfit extends React.Component {
     server.get(`/related/${currProdId}`)
       .then((res) => {
         //remove duplicates from api
-        console.log(res.data[0])
         for (let i = 0; i < res.data[0].length; i++){
           if (res.data[0][i].id === 40345 ) {
             res.data[0].splice(i,1);
