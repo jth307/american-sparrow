@@ -52,7 +52,6 @@ const ReviewsList = class extends React.Component {
       },
     })
       .then((response) => {
-        console.log(response)
         this.setState({ reviews: response.data.results }, this.updateDisplay);
       })
       .catch((err) => {

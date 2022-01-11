@@ -122,7 +122,7 @@ const Ratings = class extends React.Component {
       } else if (char[0] === 'Comfort') {
         char[1].scale = ['Poor', null, 'Perfect'];
       }
-      return char;
+      //return char;
     });
     this.setState({ characteristics: characteristicsArr });
   }
@@ -145,7 +145,6 @@ const Ratings = class extends React.Component {
       }
     });
 
-    console.log(displayStarFilter);
     if (starFilter.length > 0) {
       filterMesage = (
         <div className="filter-message">

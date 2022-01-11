@@ -17,9 +17,7 @@ const RatingsAndReviews = class extends React.Component {
 
    componentDidUpdate(prevProps) {
     const {currProdId} = this.props;
-    console.log(prevProps.currProdId, currProdId)
     if ((prevProps.currProdId !== currProdId)) {
-      console.log('hey')
       this.setState({productId: currProdId});
     }
   }
