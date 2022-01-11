@@ -21,17 +21,24 @@ const QnaList = class extends React.Component {
     }
 
     componentDidMount() {
-      this.getQs();
+      const {currProdId} = this.props;
+      this.getQs(currProdId);
     }
 
+    componentDidUpdate(prevProps) {
+      const {currProdId} = this.props;
+      if ((prevProps.currProdId !== currProdId)) {
+        this.getQs(currProdId);
+      }
+    }
 
     handleMoreQs() {
       this.setState((prevState) => ({ qnaCount: prevState.qnaCount + 2 }), this.updateqDisplay);
     }
 
-    getQs() {
+    getQs(id) {
       axios.get('/qa/questions', {
-        params: { product_id: 40348 },
+        params: { product_id: id },
       })
     .then((response) => {
       this.setState({ allquestions: response.data.results });
