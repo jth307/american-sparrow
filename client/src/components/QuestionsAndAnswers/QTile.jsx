@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
-// import Thumbnail from './Thumbnail';
+import Thumbnail from '../RatingsAndReviews/Thumbnail';
 
 const QTile = ({ question, getQs }) => {
   const[answer, setAnswer] = useState('This question has not been answered')
@@ -9,6 +9,8 @@ const QTile = ({ question, getQs }) => {
   const[askDate, setAskDate] = useState('')
   const[helpfulness, setHelpfulness] = useState(0)
   const[answerID, setAnswerID] = useState(0)
+  const[photos, setPhotos] = useState([])
+
 
 
   function getAs(id) {
@@ -22,6 +24,7 @@ const QTile = ({ question, getQs }) => {
       })
       .then((data) =>{
         setAnswer(data.body);
+        setPhotos(data.photos);
         setAskDate(data.date);
         setHelpfulness(data.helpfulness);
         setAnswerID(data.answer_id);
@@ -125,18 +128,15 @@ const QTile = ({ question, getQs }) => {
       </p>
       {answerSection}
 
-        <div className="review-body">
-          {/* {salesResponse}
           <div className="review-photos">
-            {review.photos.map((photo) => (
+            {photos.map((photo) => (
               <Thumbnail
                 photo={photo}
                 key={photo.id}
               />
             ))}
-          </div> */}
+          </div>
           {/* {helpfulSection} */}
-        </div>
       </div>
   );
 };
