@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
 import Thumbnail from '../RatingsAndReviews/Thumbnail';
@@ -23,6 +23,7 @@ const QTile = ({ question, getQs }) => {
         return response.data.results[0];
       })
       .then((data) =>{
+        console.log(data.photos)
         setAnswer(data.body);
         setPhotos(data.photos);
         setAskDate(data.date);
@@ -38,7 +39,9 @@ const QTile = ({ question, getQs }) => {
       });
   }
 
-  getAs(question.question_id);
+  useEffect(() => {
+    getAs(question.question_id);
+  }, []);
 
 
   function markQsHelpful(questionId) {
@@ -129,31 +132,27 @@ const QTile = ({ question, getQs }) => {
       {answerSection}
 
           <div className="review-photos">
-            {photos.map((photo) => (
+            {photos.slice(1).map((photo) => (
               <Thumbnail
                 photo={photo}
                 key={photo.id}
               />
             ))}
           </div>
-          {/* {helpfulSection} */}
       </div>
   );
 };
 
 QTile.propTypes = {
-  // review: PropTypes.instanceOf(Object).isRequired,
   question: PropTypes.shape({
     body: PropTypes.string,
     date: PropTypes.string,
     helpfulness: PropTypes.number,
-    // photos: PropTypes.instanceOf(Array),
-    // rating: PropTypes.number,
+    photos: PropTypes.instanceOf(Array),
     recommend: PropTypes.bool,
     response: PropTypes.string,
     question_id: PropTypes.number,
     asker_name: PropTypes.string,
-    // summary: PropTypes.string,
   }).isRequired,
   getQs: PropTypes.instanceOf(Function).isRequired,
 };
@@ -161,42 +160,3 @@ QTile.propTypes = {
 export default QTile;
 
 
-  // let displaySummary;
-  // let extraSummaryinBody;
-  // if (review.summary.length <= 60) {
-  //   displaySummary = review.summary;
-  // } else {
-  //   displaySummary = review.summary.slice(0, 57).concat('...');
-  //   extraSummaryinBody = '...'.concat(review.summary.slice(57));
-  // }
-
-  // const [showMoreBody, setShowMoreBody] = useState(false);
-  // let displayBody;
-  // let showMoreSnippet;
-  // if (review.body.length <= 250) {
-  //   displayBody = review.body;
-  // } else {
-  //   displayBody = review.body.slice(0, 250).concat('...');
-  //   showMoreSnippet = <p onClick={() => setShowMoreBody(true)} className="more-body" role="presentation">Show more...</p>;
-  // }
-
-  // let recommendProduct;
-  // if (review.recommend) {
-  //   recommendProduct = (
-  //     <p className="recommend-product">
-  //       <i className="fas fa-check" />
-  //       {' '}
-  //       I recommend this product
-  //     </p>
-  //   );
-  // }
-
-  // let qResponse;
-  // if (review.response) {
-  //   salesResponse = (
-  //     <div className="sales-response">
-  //       <div className="response-heading">Response: </div>
-  //       {review.response}
-  //     </div>
-  //   );
-  // }
