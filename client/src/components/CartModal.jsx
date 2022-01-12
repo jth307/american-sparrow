@@ -49,8 +49,8 @@ function CartModal(props) {
                   {style.style.sale_price
                     ? style.style.sale_price : style.style.original_price}
                 </div>
-                <div onClick={()=>(removeStyleFromCart(style))} id="save"><u>Save for later</u></div>
-                <div onClick={()=>(removeStyleFromCart(style))} id="remove"><u>Remove</u></div>
+                <div onClick={()=>(removeStyleFromCart(style))} id="save">Save for later</div>
+                <div onClick={()=>(removeStyleFromCart(style))} id="remove">Remove</div>
               </div>
             </div>
           ))}
@@ -60,7 +60,7 @@ function CartModal(props) {
                 <div>
                   <div id="Subtotal">Sub-Total</div>
                   <div id="itemz">
-                    {itemCount}
+                    {itemCount+" "}
                     items
                   </div>
                 </div>
@@ -88,8 +88,8 @@ function CartModal(props) {
 
       <button
         type="button"
-        id="add-to-favorites-button"
-        className="interactive-button-copy"
+        id="cart-button"
+        className="interactive-button-copyy"
         onClick={openCartModal}
       >
         Cart
