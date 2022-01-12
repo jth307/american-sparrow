@@ -1771,16 +1771,17 @@ input:focus {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(15, 56, 46, 0.5);
+    background-color: rgb(8 8 8 / 80%);
     opacity: 0;
     visibility: hidden;
+
   }
 
   .cart-show-popup {
     z-index: 5;
     opacity: 1;
     visibility: visible;
-    transform: scale(1.68);
+    transform: scale(1.7);
     transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
   }
 
@@ -1789,14 +1790,13 @@ input:focus {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: rgb(218,255,232);
-    background: linear-gradient(297deg, rgba(218,255,232,1) 0%, rgba(185,247,215,1) 35%, rgba(204,255,240,1) 100%);    padding: 1rem 1.5rem;
+    background: rgb(234 234 234);
     width: 80rem;
     height: 50rem;
     overflow-y: scroll;
-    border: solid rgb(129, 221, 186);
-    border-radius: 2%;
-  }
+    box-shadow: inset;
+    color:rgb(23, 48, 28);
+    }
 
   .cart-close-popup {
     float: right;
@@ -1816,49 +1816,45 @@ input:focus {
 
   .cart-popup-header {
     font-size: 2rem;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-    margin-left: 5%;
-    margin-top: 1%;
+    font-family: sans-serif;
+    letter-spacing: 0.4px;
+    text-align: left;
+    margin: 3% 4% 0 3%;
     color:rgb(23, 48, 28);
-    padding:0;
+    padding-bottom:1.2rem;
+    border-bottom: 1px solid rgb(24, 24, 24);
   }
 
 
-  .nuthin{
-    font-size: 6rem;
+  #nuthin{
+    font-size: 1.7rem;
+    font-family: sans-serif;
+    letter-spacing: 0.5px;
     width: 100%;
     height: 20%;
     font-weight: 1000;
-    text-align: center;
+    text-align: left;
     position: absolute;
-    color:rgba(16, 95, 46, 0.25);
-    top: 40%;
-    right: 0%;
+    top: 18%;
+    left: 3%;
+    color: rgb(8 8 8);
   }
 
-
-  .Cart-Container{
-    width: 100%;
+  #Cart-Container{
+    width: 93%;
     height: 85%;
-    margin-top: 2%;
+    margin-left: 3%;
     padding-top: 3%;
-    background-color: #ffffff;
-    border-radius: 20px;
-    box-shadow: 0px 25px 40px #1687d933;
+    background: rgb(234 234 234);
+    box-shadow: 0px 25px 40px #1b1b1bb5;
+    color: black;
     overflow-y: scroll;
+}
 
-   }
-
-   .Cart-Items{
-    margin: auto;
-    width: 85%;
-    height: 30%;
+   #Cart-Items{
     display: flex;
-    justify-content:space-around;
-    align-items: center;
-    text-align: left;
-    gap: 10rem;
+    justify-content: space-between;
+    margin-bottom: 1.2rem;
    }
    .image-box{
     width: 5%;
@@ -1869,7 +1865,7 @@ input:focus {
    .txn-photo {
     height: 10rem;
     width:10rem;
-    border: 0.3rem solid teal;
+    box-shadow: 0px 25px 40px #1b1b1bb5;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -1877,27 +1873,26 @@ input:focus {
   }
 
    .about{
-    height: 50%;
-    left: 30%;
-    top: 0;
-    width:12rem;
-
+    margin-left:1rem;
    }
    .title{
-    font-size: 1.5rem;
-    font-family: 'Open Sans';
-    font-weight: 800;
+    font-size: 1.4rem;
+    font-family: sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.8px;
     color: #202020;
    }
    .subtitle{
-    line-height: 0.5rem;
     font-size: 1rem;
-    font-family: 'Open Sans';
+    line-height: 0.3rem;
+    font-family: serif;
     font-weight: 600;
-    color: #909090;
+    letter-spacing: 0.8px;
+    color: #6b6b6b;
     margin: none;
    }
-   .counter{
+
+   #counter{
     width: 10%;
     height:50%;
     display: flex;
@@ -1905,7 +1900,7 @@ input:focus {
     align-items: center;
 
    }
-   .btnn{
+   #btnn{
     width: 2rem;
     height: 2rem;
     border-radius: 50%;
@@ -1919,25 +1914,25 @@ input:focus {
     color: #202020;
     cursor: pointer;
    }
-   .countbtnn{
+   #countbtnn{
     font-size: 1rem;
     font-family: ‘Open Sans’;
     font-weight: 900;
     color: #202020;
    }
 
-   .prices{
+   #prices{
     height: 100%;
     text-align: right;
    }
-   .amount{
+   #amount{
     padding-top: 20px;
     font-size: 1.5rem;
     font-family: ‘Open Sans’;
     font-weight: 800;
     color: #202020;
    }
-   .save{
+   #save{
     padding-top: 5px;
     font-size: 1rem;
     font-family: "Open Sans";
@@ -1945,7 +1940,7 @@ input:focus {
     color: #0e8845;
     cursor: pointer;
    }
-   .remove{
+   #remove{
     padding-top: 5px;
     font-size: 1rem;
     font-family: "Open Sans";
@@ -1954,39 +1949,39 @@ input:focus {
     cursor: pointer;
    }
 
-   .HR{
+   #HR{
     width: 70%;
     float: right;
     margin-right: 5%;
     margin-top:2%;
     border-top: 0.2rem solid rgb(172, 172, 172);
    }
-   .checkout{
+   #checkout{
     float: right;
     margin-right: 5%;
     margin-top: 5%;
     width: 25%;
    }
-   .total{
+   #total{
     width: 100%;
     display: flex;
     justify-content: space-between;
    }
-   .Subtotal{
+   #Subtotal{
     font-size: 1rem;
     font-family: "Open Sans";
     font-weight: 700;
     color: #202020;
     margin-top: 4%;
    }
-   .itemz{
+   #itemz{
     font-size: 1rem;
     font-family: "Open Sans";
     font-weight: 500;
     color: #909090;
     line-height: 1.5rem;
    }
-   .total-amount{
+   #total-amount{
     font-size: 2rem;
     font-family: "Open Sans";
     font-weight: 700;

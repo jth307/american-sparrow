@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import calcTotalPrice from '../helpers/calcTotalPrice';
+import calcTotalPrice from './helpers/calcTotalPrice';
 
 function CartModal(props) {
   const { stylesInCart, removeStyleFromCart, itemCount, changeQty} = props;
@@ -15,12 +15,12 @@ function CartModal(props) {
     setModalClass('cart-popup-container');
   }
 
-  const show = stylesInCart.length === 0 ? <div className="nuthin">Nothing In Cart</div>
+  const show = stylesInCart.length === 0 ? <div id="nuthin">Your bag is empty</div>
     : (
       <>
-        <div className="Cart-Container">
+        <div id="Cart-Container">
           {stylesInCart.map((style) => (
-            <div className="Cart-Items">
+            <div id="Cart-Items">
               <div className="image-box">
                 <div
                   className="txn-photo"
@@ -31,40 +31,40 @@ function CartModal(props) {
                 <h1 className="title">{style.product.name}</h1>
                 <h5 className="subtitle">
                   Color:
-                  {style.style.name}
+                  {" "+style.style.name}
                 </h5>
                 <h5 className="subtitle">
                   Size:
-                  {style.size}
+                  {" "+style.size}
                 </h5>
               </div>
-              <div className="counter">
-                <div onClick={() => (changeQty(style, -1))} className="btnn">-</div>
-                <div className="countbtnn">{style.quantity}</div>
-                <div onClick={() => (changeQty(style, 1))} className="btnn">+</div>
+              <div id="counter">
+                <div onClick={() => (changeQty(style, -1))} id="btnn">-</div>
+                <div id="countbtnn">{style.quantity}</div>
+                <div onClick={() => (changeQty(style, 1))} id="btnn">+</div>
               </div>
-              <div classNames="prices">
-                <div className="amount">
+              <div id="prices">
+                <div id="amount">
                   $
                   {style.style.sale_price
                     ? style.style.sale_price : style.style.original_price}
                 </div>
-                <div onClick={()=>(removeStyleFromCart(style))} className="save"><u>Save for later</u></div>
-                <div onClick={()=>(removeStyleFromCart(style))} className="remove"><u>Remove</u></div>
+                <div onClick={()=>(removeStyleFromCart(style))} id="save"><u>Save for later</u></div>
+                <div onClick={()=>(removeStyleFromCart(style))} id="remove"><u>Remove</u></div>
               </div>
             </div>
           ))}
-          <div className="HR">
-            <div className="checkout">
-              <div className="total">
+          <div id="HR">
+            <div id="checkout">
+              <div id="total">
                 <div>
-                  <div className="Subtotal">Sub-Total</div>
-                  <div className="itemz">
+                  <div id="Subtotal">Sub-Total</div>
+                  <div id="itemz">
                     {itemCount}
                     items
                   </div>
                 </div>
-                <div className="total-amount">
+                <div id="total-amount">
                   $
                   {calcTotalPrice(stylesInCart)}
                 </div>
@@ -92,7 +92,7 @@ function CartModal(props) {
         className="interactive-button-copy"
         onClick={openCartModal}
       >
-        &#128722;
+        Cart
       </button>
     </>
   );

@@ -23,7 +23,6 @@ const QTile = ({ question, getQs }) => {
         return response.data.results[0];
       })
       .then((data) =>{
-        console.log(data.photos)
         setAnswer(data.body);
         setPhotos(data.photos);
         setAskDate(data.date);

@@ -1,6 +1,7 @@
 import React from 'react';
 import saleTimer from './helpers/saleTimer';
 import server from './helpers/Axios';
+import CartModal from './CartModal';
 
 class Banner extends React.Component {
   constructor(props) {
@@ -94,6 +95,14 @@ class Banner extends React.Component {
 
   render() {
     const {
+      stylesInCart,
+      addStyleToCart,
+      removeStyleFromCart,
+      itemCount,
+      changeQty,
+    } = this.props;
+
+    const {
       onChange,
       onClick,
       onKeyDown,
@@ -151,7 +160,12 @@ class Banner extends React.Component {
         <div>Men</div>
         <div>Shoes</div>
         <div>Accessories</div>
-        <div>Cart</div>
+        {<CartModal
+          stylesInCart={stylesInCart}
+          changeQty={changeQty}
+          removeStyleFromCart={removeStyleFromCart}
+          itemCount={itemCount}
+        /> }
         </div>
         </div>
         <div className="mini-banner">

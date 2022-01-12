@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-// import React from 'react';
 import PropTypes from 'prop-types';
-import CartModal from './CartModal';
+// import CartModal from './CartModal';
 
 function AddToCart(props) {
   const {
@@ -21,11 +20,7 @@ function AddToCart(props) {
 
   // Grab only the sizes in stock for current style. Using Object.entries() to appease linter.
   useEffect(() => {
-    // console.log('productStyleSelected', productStyleSelected);
-    // console.log('productStyleSelected SKUs', productStyleSelected.skus);
-    // console.log('Object.values of SKUs', Object.values(productStyleSelected.skus));
     const sizeOptions = Object.entries(productStyleSelected.skus);
-    // console.log('sizeOptions', sizeOptions);
     const sizeOptionsFiltered = {};
     for (let i = 0; i < sizeOptions.length; i += 1) {
       const sku = sizeOptions[i][0];
@@ -70,12 +65,9 @@ function AddToCart(props) {
     setShowError(false);
   }
 
-  // console.log('sizesInStock', sizesInStock);
-  // console.log('selectedSize', selectedSize);
 
   function handleAddToBag() {
     const selectedQuantity = document.getElementById('quantity-dropdown').value;
-    // console.log('selectedQuantity', selectedQuantity);
 
     if (!isLoading) {
       if (Object.values(selectedSize).length === 0) {

@@ -31,11 +31,11 @@ class ProductOverview extends React.Component {
       productReviews,
       productRatings,
       selectProductStyle,
-      // stylesInCart,
-      // addStyleToCart,
-      // removeStyleFromCart,
-      // itemCount,
-      // changeQty,
+      stylesInCart,
+      addStyleToCart,
+      removeStyleFromCart,
+      itemCount,
+      changeQty,
     } = this.props;
 
     const { expanded } = this.state;
@@ -65,11 +65,11 @@ class ProductOverview extends React.Component {
               product={product}
               productStyleSelected={productStyleSelected}
               key={productStyleSelected.style_id}
-              // stylesInCart={stylesInCart}
-              // addStyleToCart={addStyleToCart}
-              // removeStyleFromCart={removeStyleFromCart}
-              // itemCount={itemCount}
-              // changeQty={changeQty}
+              stylesInCart={stylesInCart}
+              addStyleToCart={addStyleToCart}
+              removeStyleFromCart={removeStyleFromCart}
+              itemCount={itemCount}
+              changeQty={changeQty}
             />
           </div>
         </div>
