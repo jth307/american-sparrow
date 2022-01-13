@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import QTile from './QTile';
+import AddQForm from './AddQForm';
 
 const QnaList = class extends React.Component {
   constructor(props) {
@@ -11,11 +12,13 @@ const QnaList = class extends React.Component {
       qdisplay: [],
       qnaCount: 2,
       showMoreQsButton: false,
+      showAddReviewModal: false,
       // answerData:{}
     };
 
     this.getQs = this.getQs.bind(this);
-    // this.getAs = this.getAs.bind(this);
+    this.addReviewClickHandler = this.addReviewClickHandler.bind(this);
+    this.closeReviewFormHandler = this.closeReviewFormHandler.bind(this);
     this.updateqDisplay = this.updateqDisplay.bind(this);
     this.handleMoreQs = this.handleMoreQs.bind(this);
     }
@@ -78,6 +81,13 @@ const QnaList = class extends React.Component {
       this.updateqDisplay();
     }
   };
+  addReviewClickHandler() {
+    this.setState({ showAddReviewModal: true });
+  }
+
+  closeReviewFormHandler() {
+    this.setState({ showAddReviewModal: false });
+  }
 
   render() {
     const { qdisplay, allquestions, showMoreQsButton } = this.state;
@@ -116,9 +126,20 @@ const QnaList = class extends React.Component {
           </div>
           <div className="buttons-container">
               {moreQsButton}
-              <button className="interactive-button" type="submit" id="add-a-review">add a question
+              <button className="interactive-button" type="submit" id="add-a-review"
+              onClick={() => {
+                this.addReviewClickHandler();
+              }}
+              >add a question
               <span id="plus-icon"><i className="fas fa-plus" /></span></button>
           </div>
+          <AddQForm
+            // productInfo={productInfo}
+            // characteristics={reviewsMeta.characteristics}
+            showAddReviewModal={this.state.showAddReviewModal}
+            closeReviewFormHandler={this.closeReviewFormHandler}
+            // getCurrProdData={getCurrProdData}
+          />
         </div>
       );
     } else {

@@ -272,7 +272,7 @@ const AddReviewForm = class extends React.Component {
                     required
                     maxLength="60"
                     size="20"
-                    placeholder="Example: jackson11!"
+                    placeholder=" Example: jackson11!"
                     onChange={this.handleInputChange}
                   />
                 </label>
@@ -289,7 +289,7 @@ const AddReviewForm = class extends React.Component {
                     required
                     maxLength="60"
                     size="30"
-                    placeholder="Example: jackson11@email.com"
+                    placeholder=" Example: jackson11@email.com"
                     onChange={this.handleInputChange}
                   />
                 </label>
