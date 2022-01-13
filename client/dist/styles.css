@@ -1371,6 +1371,185 @@ img.thumbnail:hover {
   margin: 0 0 0.5rem 2rem;
 }
 
+
+.review-form-container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(2.0);
+}
+
+.show-review-form {
+  z-index: 5;
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1.0);
+  transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+
+.review-form-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: whitesmoke;
+  padding: 1rem 1.5rem;
+  width: 100rem;
+  height: 80rem;
+  overflow-y: scroll;
+  border-radius: 0.5rem;
+  padding: 5rem 15rem;
+  align-items: center;
+}
+
+.review-form-title {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.new-review-stars {
+  cursor: pointer;
+  font-size: 2.5rem;
+}
+
+.new-review-stars-label {
+  font-size: 2rem;
+  margin: 0 3rem;
+}
+
+#add-review-form {
+  font-size: 2rem;
+  margin: 1rem 0;
+}
+
+h2 {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.review-form-header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: solid 1px;
+  padding-bottom: 1rem;
+  align-items: center;
+}
+
+.review-section-header {
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.required-review-mark {
+  font-size: 1.3rem;
+  color: red;
+}
+
+.asterisk-wrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+#recommend-product {
+  margin: 1rem 0;
+}
+
+.muted-reminders {
+  margin: 0.5rem 0 1rem 0;
+  font-size: 1.7rem;
+  color: rgb(90, 90, 90);
+}
+
+.text-reminder {
+  text-align: right;
+}
+
+.radio-button-container {
+  display: flex;
+  margin: 1rem 0;
+  justify-content: space-evenly;
+}
+
+.new-char-selections input[type=radio] {
+  display: block;
+  margin: 0 auto;
+}
+
+.new-char-selections label [for=radio] {
+  display: inline-block;
+}
+
+#add-characteristic-container {
+  margin: 2rem 0;
+}
+
+.new-char-content {
+  margin-bottom: 2rem;
+  border-bottom: solid 1px darkgray;
+}
+
+.new-char-selections {
+  display: flex;
+  justify-content: space-evenly;
+  align-content: center;
+  font-size: 1.6rem;
+}
+
+.selected-char-label {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.text-review-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-review-summary {
+  margin: 1rem 0;
+}
+
+.upload-review-photo {
+  margin-bottom: 1rem;
+}
+
+.rating-warning {
+  color: red;
+  font-size: 1.6rem;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin-top: 1rem;
+}
+
+#add-review-form input[type=email] {
+  width: 100%;
+  height: 4rem;
+}
+
+#add-review-form input[type=text] {
+  width: 100%;
+  height: 4rem;
+}
+
+textarea {
+  width: 100%;
+  height: 10rem;
+  box-sizing: border-box;
+}
+
+.submit-button-holder {
+  text-align: center;
+  margin-top: 4rem;
+}
+
 /* Stars
 .stars-outer {
   display: inline-block;
@@ -1974,5 +2153,7 @@ input:focus {
     background-size: 100%;
     background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAQAAAAAYLlVAAACnElEQVR4AcXZsUsbYRjH8e+dh2s1SyAGJwMJuDj1BIcEhJQIOnTq5F+QOf0jIq79A7oFh7aYyVBEkaZDC3awECc1AUXRIqUQotfFocnjJe/dk+b9PKP65Md7z13ee3Uwk2SNHKmngs5TnbDLJQqjA+RYZ4OXuDzvkSYf+cAJ44fPAYFhHeAzVhlqBBGrRoax8KjSJYhRXap4KCVoECiqQQKFLC0CZbXIElOBOwJ9cUchzm2Y5QsveN4tdfY4o00HSDHHPKuUmOV5v/D5SSSJ0MXfIY+HBB55dkIvRIIIvJDR28dnFJ/9kHH0MFaVDehRxlSZnuxAFUMZunKQKBJFUQ4wXTIYqcmPZ5GoFmUEahjw5eJTJI6ivBD4jCS/csrEVZZfU4yQk5OPhrwjcoRygQ0GVdCQf73OUEfisaMkHk1HDJHkYeDX82jlBzo+kCSEyxruwDP/EK1DbsWnhHDFgNTpodWjLgY9NECKfnvoyS4p8wBngN5Z/ABtQK8dP0AH0OuYB5iMqfAAMque7HJtHmAOPdnlxjzAPHqyy5V5gFX0ZJfj8AAn9CvhoeVRol8zPMAuj/xrlhW0Vpg1D3ApflhGR3b4wTlDvI24i4u+w9y0uyVrM213U1qxuy2/Z8bui8m23VezgGW7L6cBLdIWXs9FBAsHFCLCJI9opFMKXEzkkEp/IbK0bEdI0LARQRzVWoigPKy+Z5tlWooIiuP6NhVmAEiPNwLkqHDEw5CGx2wyDQDRI8T7l80U19xwxTFNmpwzKM1nFsyeCw7jFymCAxYjrHDp8r9cUOCUYRZ4Bw6AxVV47QJYXIVXLliNsOSC1Qh/XLAa4ZuDmmIcH1l2AaytwhZfmaAkn/qOb7eYBofJekOJJX7znfccAvwFyB3OeNys7d4AAAAASUVORK5CYII=");
   }
+
+
 
 

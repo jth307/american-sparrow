@@ -3,6 +3,8 @@ import axios from 'axios';
 import PropTypes from 'prop-types';
 import ReviewTile from './ReviewTile';
 import SortReviews from './SortReviews';
+import AddReviewForm from './AddReviewForm';
+
 
 const ReviewsList = class extends React.Component {
   constructor(props) {
@@ -14,12 +16,15 @@ const ReviewsList = class extends React.Component {
       sortBy: 'relevant',
       reviewCount: 2,
       showMoreReviewsButton: false,
+      showAddReviewModal: false,
     };
 
     this.getReviews = this.getReviews.bind(this);
     this.updateDisplay = this.updateDisplay.bind(this);
     this.handleMoreReviews = this.handleMoreReviews.bind(this);
     this.sortClickHandler = this.sortClickHandler.bind(this);
+    this.addReviewClickHandler = this.addReviewClickHandler.bind(this);
+    this.closeReviewFormHandler = this.closeReviewFormHandler.bind(this);
   }
 
   componentDidMount() {
@@ -120,6 +125,14 @@ const ReviewsList = class extends React.Component {
     this.setState({ sortBy: value });
   }
 
+  addReviewClickHandler() {
+    this.setState({ showAddReviewModal: true });
+  }
+
+  closeReviewFormHandler() {
+    this.setState({ showAddReviewModal: false });
+  }
+
   render() {
     const {
       display, reviews, showMoreReviewsButton, sortBy,
@@ -156,10 +169,21 @@ const ReviewsList = class extends React.Component {
         </div>
         <div className="buttons-container">
           {moreReviewsButton}
-          <button type="submit" className="interactive-button">
+          <button type="submit" className="interactive-button" onClick={() => {
+              this.addReviewClickHandler();
+            }}>
             add a review
             <span id="plus-icon"><i className="fas fa-plus" /></span>
           </button>
+        </div>
+        <div>
+        <AddReviewForm
+            // productInfo={productInfo}
+            // characteristics={reviewsMeta.characteristics}
+            showAddReviewModal={this.state.showAddReviewModal}
+            closeReviewFormHandler={this.closeReviewFormHandler}
+            // getCurrProdData={getCurrProdData}
+          />
         </div>
       </div>
     );

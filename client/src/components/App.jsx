@@ -148,23 +148,23 @@ class App extends React.Component {
                 itemCount={itemCount}
                 changeQty={this.changeQty}
               />
-              <RelatedItemsAndOutfit
+              {/* <RelatedItemsAndOutfit
                 currProdId={currProdId}
                 prodInfo={prodInfo}
                 prodStyles={prodStyles}
                 prodReviewsMeta={prodReviewsMeta}
                 prodStyleSelected={prodStyleSelected}
                 changeProductHandler={this.changeProductHandler}
-              />
+              /> */}
               <RatingsAndReviews
                 currProdId={currProdId}
                 prodInfo={prodInfo}
                 prodReviews={prodReviews}
                 prodReviewsMeta={prodReviewsMeta}
               />
-               <QuestionsAndAnswers
+               {/* <QuestionsAndAnswers
                 currProdId={currProdId}
-               />
+               /> */}
 
             </div>
           )}
