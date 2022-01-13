@@ -18,28 +18,15 @@ const AddReviewForm = class extends React.Component {
       name: '',
       email: '',
       photos: [],
-      // characteristics: {},
     };
 
-    // this.processCharacteristics = this.processCharacteristics.bind(this);
     this.handleStarRatingClick = this.handleStarRatingClick.bind(this);
-    // this.handleCharRatingClick = this.handleCharRatingClick.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
     this.fileInput = React.createRef();
     this.handleFileUpload = this.handleFileUpload.bind(this);
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
   }
 
-  // componentDidMount() {
-  //   this.processCharacteristics();
-  // }
-
-  // componentDidUpdate(prevProps) {
-  //   const { characteristics } = this.props;
-  //   if (JSON.stringify(characteristics) !== JSON.stringify(prevProps.characteristics)) {
-  //     this.processCharacteristics();
-  //   }
-  // }
 
   handleStarRatingClick(id) {
     this.setState({
@@ -49,16 +36,7 @@ const AddReviewForm = class extends React.Component {
     });
   }
 
-  // handleCharRatingClick(id, e) {
-  //   const { characteristics } = this.state;
-  //   const selection = { ...characteristics };
-  //   selection[id] = Number(e.target.value);
-  //   this.setState({
-  //     characteristics: selection,
-  //   });
-  //   // console.log(e.target.value);
-  //   // console.log(e.target.name);
-  // }
+
 
   handleInputChange(e) {
     const { name } = e.target;
@@ -70,13 +48,6 @@ const AddReviewForm = class extends React.Component {
     if (this.fileInput.current.files.length > 5) {
       alert('Cannot upload more than 5 images!');
     }
-    // console.log(this.fileInput.current.files[0].name);
-    // const reader = new FileReader();
-    // reader.onloadend = (e) => {
-    //   console.log(e.target.result);
-    // };
-    // const url = reader.readAsDataURL();
-    // console.log(url);
   }
 
   handleFormSubmit(e) {
@@ -90,7 +61,6 @@ const AddReviewForm = class extends React.Component {
       rating,
       summary,
       body,
-      // recommend: JSON.parse(recommend),
       name,
       email,
       photos,
@@ -106,30 +76,6 @@ const AddReviewForm = class extends React.Component {
         });
     }
   }
-
-  // processCharacteristics() {
-  //   let chars = {};
-  //   if (Object.keys(characteristics).length > 0) {
-  //     chars = Object.entries(characteristics);
-  //     chars.forEach((char) => {
-  //       if (true) {
-  //         char[1].labels = ['A size too small', '1/2 a size too small', 'Perfect', '1/2 a size too big', 'A size too wide'];
-  //       } else if (char[0] === 'Width') {
-  //         char[1].labels = ['Too narrow', 'Slightly narrow', 'Perfect', 'Slightly wide', 'Too wide'];
-  //       } else if (char[0] === 'Comfort') {
-  //         char[1].labels = ['Uncomfortable', 'Slightly uncomfortable', 'Ok', 'Comfortable', 'Perfect'];
-  //       } else if (char[0] === 'Quality') {
-  //         char[1].labels = ['Poor', 'Below average', 'What I expected', 'Pretty great', 'Perfect'];
-  //       } else if (char[0] === 'Length') {
-  //         char[1].labels = ['Runs Short', 'Runs slightly short', 'Perfect', 'Runs slightly long', 'Runs long'];
-  //       } else if (char[0] === 'Fit') {
-  //         char[1].labels = ['Runs tight', 'Runs slightly tight', 'Perfect', 'Runs slightly long', 'Runs long'];
-  //       }
-  //       return char;
-  //     });
-  //   }
-  //   this.setState({ chars });
-  // }
 
   render() {
     const {
@@ -181,7 +127,7 @@ const AddReviewForm = class extends React.Component {
         <div className="review-body-counter muted-reminders text-reminder">
           Minimum required characters left:
           {' '}
-          {50 - body.length}
+          {Math.max(20 - body.length,0)}
         </div>
       );
     } else {
@@ -196,23 +142,15 @@ const AddReviewForm = class extends React.Component {
       <div className={reviewFormClass}>
         <div className="review-form-content">
           <span className="close-modal" onClick={closeReviewFormHandler} role="presentation"><i className="fas fa-times" /></span>
-          <h1 className="review-form-title">Write Your Review</h1>
           <div className="review-form-header">
             <span className="review-section-header">Your product rating</span>
-            <span className="required-review-mark">
-              <i className="fas fa-asterisk" />
-              Required
-            </span>
           </div>
           <form id="add-review-form" onSubmit={this.handleFormSubmit}>
             <label htmlFor="overall-rating">
               <div className="asterisk-wrapper">
                 Overall rating
-                <span className="required-review-mark">
-                  <i className="fas fa-asterisk" />
-                </span>
               </div>
-              <span className="muted-reminders">Click to rate!</span>
+              {/* <span className="muted-reminders">Click to rate!</span> */}
               <div id="overall-rating">
                 <div className="stars-outer new-review-stars">
                   {starIds.map((id) => (
@@ -241,9 +179,6 @@ const AddReviewForm = class extends React.Component {
               <label htmlFor="recommend-product">
                 <div className="asterisk-wrapper">
                   Do you recommend this product?
-                  <span className="required-review-mark">
-                    <i className="fas fa-asterisk" />
-                  </span>
                 </div>
                 <div className="radio-button-container">
                   <label htmlFor="recommend">
@@ -292,9 +227,6 @@ const AddReviewForm = class extends React.Component {
                 <label htmlFor="user-review-body">
                   <div className="asterisk-wrapper">
                     Your Review
-                    <span className="required-review-mark">
-                      <i className="fas fa-asterisk" />
-                    </span>
                   </div>
                   <textarea
                     id="user-review-body"
@@ -302,8 +234,7 @@ const AddReviewForm = class extends React.Component {
                     required
                     rows="20"
                     cols="50"
-                    placeholder="Why did you like the product or not?"
-                    minLength="50"
+                    minLength="20"
                     maxLength="1000"
                     onChange={this.handleInputChange}
                   />
@@ -332,10 +263,7 @@ const AddReviewForm = class extends React.Component {
               <div className="review-user-nickname">
                 <label htmlFor="review-user-nickname">
                   <div className="asterisk-wrapper">
-                    What is your nickname?
-                    <span className="required-review-mark">
-                      <i className="fas fa-asterisk" />
-                    </span>
+                    Your username
                   </div>
                   <input
                     type="text"
@@ -348,17 +276,11 @@ const AddReviewForm = class extends React.Component {
                     onChange={this.handleInputChange}
                   />
                 </label>
-                <div className="muted-reminders text-reminder">
-                  For privacy reasons, do not use your full name or email address
-                </div>
               </div>
               <div className="review-user-email">
                 <label htmlFor="review-user-email">
                   <div className="asterisk-wrapper">
-                    What is your email?
-                    <span className="required-review-mark">
-                      <i className="fas fa-asterisk" />
-                    </span>
+                    Your email
                   </div>
                   <input
                     type="email"
@@ -371,9 +293,7 @@ const AddReviewForm = class extends React.Component {
                     onChange={this.handleInputChange}
                   />
                 </label>
-                <div className="muted-reminders text-reminder">
-                  For authentication reasons, you will not be emailed
-                </div>
+
               </div>
             </div>
             <div className="submit-button-holder">
