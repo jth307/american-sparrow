@@ -156,7 +156,7 @@ class App extends React.Component {
                 prodStyleSelected={prodStyleSelected}
                 changeProductHandler={this.changeProductHandler}
               />
-              {/* <RatingsAndReviews
+              <RatingsAndReviews
                 currProdId={currProdId}
                 prodInfo={prodInfo}
                 prodReviews={prodReviews}
@@ -164,7 +164,7 @@ class App extends React.Component {
               />
                <QuestionsAndAnswers
                 currProdId={currProdId}
-               /> */}
+               />
 
             </div>
           )}

@@ -155,7 +155,6 @@ class Banner extends React.Component {
           {optionList}
         </div> */}
         <div className='banner-menuItems'>
-        {/* <div onClick={() => (history.push('/free'))}>Free Stocks</div> */}
         <div>Women</div>
         <div>Men</div>
         <div>Shoes</div>

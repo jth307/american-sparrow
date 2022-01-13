@@ -15,12 +15,12 @@ function CartModal(props) {
     setModalClass('cart-popup-container');
   }
 
-  const show = stylesInCart.length === 0 ? <div id="nuthin">Your bag is empty</div>
+  const show = stylesInCart.length === 0 ? <div className="nuthin">Your bag is empty</div>
     : (
       <>
         <div id="Cart-Container">
           {stylesInCart.map((style) => (
-            <div id="Cart-Items">
+            <div className="Cart-Items">
               <div className="image-box">
                 <div
                   className="txn-photo"
@@ -38,7 +38,7 @@ function CartModal(props) {
                   {" "+style.size}
                 </h5>
               </div>
-              <div id="counter">
+              <div className="counter">
                 <div onClick={() => (changeQty(style, -1))} id="btnn">-</div>
                 <div id="countbtnn">{style.quantity}</div>
                 <div onClick={() => (changeQty(style, 1))} id="btnn">+</div>
@@ -54,8 +54,8 @@ function CartModal(props) {
               </div>
             </div>
           ))}
-          <div id="HR">
-            <div id="checkout">
+          <div className="HR">
+            <div className="checkout">
               <div id="total">
                 <div>
                   <div id="Subtotal">Sub-Total</div>
