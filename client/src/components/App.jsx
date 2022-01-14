@@ -156,12 +156,12 @@ class App extends React.Component {
                 prodStyleSelected={prodStyleSelected}
                 changeProductHandler={this.changeProductHandler}
               /> */}
-              {/* <RatingsAndReviews
+              <RatingsAndReviews
                 currProdId={currProdId}
                 prodInfo={prodInfo}
                 prodReviews={prodReviews}
                 prodReviewsMeta={prodReviewsMeta}
-              /> */}
+              />
                <QuestionsAndAnswers
                 currProdId={currProdId}
                />

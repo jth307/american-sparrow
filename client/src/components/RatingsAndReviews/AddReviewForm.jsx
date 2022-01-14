@@ -241,7 +241,7 @@ const AddReviewForm = class extends React.Component {
                 </label>
                 {reviewBodyCounter}
               </div>
-              {/* <div className="upload-review-photo">
+              <div className="upload-review-photo">
                 <label htmlFor="upload-review-photo">
                   <div className="upload-photo-prompt">
                     Please upload your photos here:
@@ -259,7 +259,7 @@ const AddReviewForm = class extends React.Component {
                 <div>
                   <button type="submit" value="upload">Upload</button>
                 </div>
-              </div> */}
+              </div>
               <div className="review-user-nickname">
                 <label htmlFor="review-user-nickname">
                   <div className="asterisk-wrapper">

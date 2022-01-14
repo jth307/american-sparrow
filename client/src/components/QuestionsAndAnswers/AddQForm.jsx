@@ -145,26 +145,6 @@ const AddQForm = class extends React.Component {
                   />
                 </label>
               </div>
-              {/* <div className="upload-review-photo">
-                <label htmlFor="upload-review-photo">
-                  <div className="upload-photo-prompt">
-                    Please upload your photos here:
-                  </div>
-                  <input
-                    type="file"
-                    ref={this.fileInput}
-                    id="upload-review-photo"
-                    name="photos"
-                    accept="image/png, image/jpeg"
-                    multiple
-                    onChange={this.handleFileUpload}
-                  />
-                </label>
-                <div>
-                  <button type="submit" value="upload">Upload</button>
-                </div>
-              </div> */}
-
             </div>
             <div className="submit-button-holder">
               <input
